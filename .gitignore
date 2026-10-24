@@ -1,0 +1,7 @@
+# .NET Build Outputs
+bin/
+obj/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
