@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CampusConnect.SignUpPage"
+             Title="SignUpPage"
+             BackgroundColor="#F5F7FB">
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Start"
+            Padding="10" >
+            <Image 
+                Source="ksrce_logo.png"
+                HeightRequest="120"
+                WidthRequest="220"
+                HorizontalOptions="Center"
+                Margin="0,20,20,20" />
+            <VerticalStackLayout Spacing="4" HorizontalOptions="Center" Margin="0,0,0,20">
+                <Label 
+                Text="CampusConnect"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="#173B70"
+                HorizontalOptions="Center"
+                 />
+                <Label 
+                Text="Connecting KSRCE Campus"
+                FontSize="10"
+                TextColor="#667085"
+                HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <Border StrokeShape="RoundRectangle 16"
+                Stroke="#E4E7EC"
+                StrokeThickness="1"
+                BackgroundColor="#FFFFFF"
+                Margin="0,0,0,10"
+                Padding="24"
+                >
+
+                <VerticalStackLayout Spacing="20">
+                    <VerticalStackLayout Spacing="6">
+                        <Label 
+                            Text="Email"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            TextColor="#172033" />
+                        <Grid ColumnDefinitions="30,*">
+                            <Label Text="" Grid.Column="0" FontSize="18" TextColor="#667085" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Entry
+                                x:Name="EmailEntry"
+                                Grid.Column="1"
+                                FontSize="12"
+                                Placeholder="e.g., staff@ksrce.ac.in"
+                                BackgroundColor="Transparent"
+                                Keyboard="Email"
+                                TextColor="#172033" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="#D0D5DD" />
+                    </VerticalStackLayout>
+
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label 
+                            Text="Phone Number"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            TextColor="#172033" />
+                        <Grid ColumnDefinitions="30,*">
+                            <Label Text="" Grid.Column="0" FontSize="18" TextColor="#667085" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Entry
+                                x:Name="PhoneEntry"
+                                Grid.Column="1"
+                                FontSize="12"
+                                Placeholder="0987654321"
+                                BackgroundColor="Transparent"
+                                Keyboard="Numeric"
+                                TextColor="#172033" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="#D0D5DD" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Password"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            TextColor="#172033" />
+                        <Grid ColumnDefinitions="30,*,30">
+                            <Label Text="" Grid.Column="0" FontSize="16" TextColor="#667085" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Entry
+                                x:Name="PassEntry"
+                                Grid.Column="1"
+                                Placeholder="********"
+                                IsPassword="True"
+                                TextColor="#172033"
+                                BackgroundColor="Transparent"
+                                 />
+                            <ImageButton Source="eye_off.png" Grid.Column="2" HeightRequest="15" WidthRequest="15" VerticalOptions="Center" HorizontalOptions="Center" Padding="6"/>
+
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="#D0D5DD"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Confirm Password"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            TextColor="#172033" />
+                        <Grid ColumnDefinitions="30,*,30">
+                            <Label Text="" Grid.Column="0" FontSize="16" TextColor="#667085" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Entry
+                                x:Name="PassConfEntry"
+                                Grid.Column="1"
+                                Placeholder="********"
+                                IsPassword="True"
+                                TextColor="#172033"
+                                BackgroundColor="Transparent"
+                                 />
+                            <ImageButton Source="eye_off.png" Grid.Column="2" HeightRequest="15" WidthRequest="15" VerticalOptions="Center" HorizontalOptions="Center" Padding="6"/>
+
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="#D0D5DD"/>
+                    </VerticalStackLayout>
+                    
+                    <Button  
+                        x:Name="SignUpButton"
+                        Text="SignUp"
+                        BackgroundColor="#173B70"
+                        TextColor="#FFFFFF"
+                        FontAttributes="Bold"
+                        CornerRadius="8"
+                        HeightRequest="48"
+                        Clicked="OnSignUpButtonClicked"
+                        Margin="0,10,0,0" />
+                </VerticalStackLayout>
+
+            </Border>
+            <VerticalStackLayout Spacing="20" HorizontalOptions="Center" Padding="30">
+                <Label Text="Forgot Password?"
+                    FontSize="13"
+                    TextColor="#1769AA"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+                <Label HorizontalOptions="Center" FontSize="13">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Already have an account? " FontSize="14" TextColor="#667085"/>
+                            <Span Text="Login" TextColor="#1769AA" FontSize="14" FontAttributes="Bold">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnLoginTapped" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CampusConnect.HomePage"
+             BackgroundColor="#F5F7FB"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, Auto, *">
+
+        <!-- ROW 0: Custom Header -->
+        <!-- FIX: Increased Padding to 20,40,20,40 to give the text breathing room from the search bar -->
+        <Border Grid.Row="0" 
+                BackgroundColor="#173B70" 
+                Padding="20,40,20,40" 
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 0,0,24,24">
+
+            <Grid ColumnDefinitions="*, Auto">
+                <!-- FIX: Added VerticalOptions="Center" so the text aligns neatly with the logo -->
+                <VerticalStackLayout Grid.Column="0" VerticalOptions="Start" Spacing="2">
+                    <Label Text="CampusConnect" FontSize="14" FontAttributes="Bold" TextColor="#FFFFFF" />
+                </VerticalStackLayout>
+
+                <!-- Settings/Profile Button -->
+                <ImageButton Grid.Column="1" 
+                             Source="ksrce_logo.png" 
+                             HeightRequest="48" 
+                             WidthRequest="148" 
+                             VerticalOptions="Start"
+                             BackgroundColor="Transparent"
+                             Clicked="SettingsClicked"/>
+            </Grid>
+        </Border>
+
+        <!-- ROW 1: Search Bar -->
+        <!-- FIX: Tweaked the margin and added a fixed HeightRequest for stability -->
+        <!-- ROW 1: Search Bar -->
+        <Border Grid.Row="1" 
+                Margin="20,-28,20,10" 
+                BackgroundColor="#FFFFFF" 
+                Stroke="#E4E7EC" 
+                StrokeThickness="1" 
+                StrokeShape="RoundRectangle 12"
+                HeightRequest="52">
+
+            <!-- STARK'S FIX: The correct MAUI way to add a shadow! -->
+            <Border.Shadow>
+                <Shadow Brush="#172033" 
+                        Offset="0,4" 
+                        Radius="10" 
+                        Opacity="0.1" />
+            </Border.Shadow>
+
+            <SearchBar x:Name="ContactSearchBar" 
+                       FontSize="12"
+                       Placeholder="Search staff or department..." 
+                       BackgroundColor="Transparent"
+                       CancelButtonColor="#1769AA"
+                       VerticalOptions="Center" />
+        </Border>
+
+        <!-- ROW 2: Contacts List Area (Milestone 7) -->
+        <VerticalStackLayout Grid.Row="2" Padding="20" VerticalOptions="Center">
+            <Label Text="The Contacts List will go here!" 
+                   FontSize="16" 
+                   TextColor="#667085" 
+                   HorizontalOptions="Center" 
+                   FontAttributes="Italic" />
+        </VerticalStackLayout>
+        
+    </Grid>
+</ContentPage>

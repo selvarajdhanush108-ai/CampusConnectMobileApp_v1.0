@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CampusConnect.SettingsPage"
+             BackgroundColor="#F5F7FB"
+             Shell.NavBarIsVisible="False">
+
+    <VerticalStackLayout Padding="24" Spacing="24">
+
+        <!-- Header with a Back Button -->
+        <Grid ColumnDefinitions="Auto, *">
+            <Button Grid.Column="0" Text="← Back" BackgroundColor="Transparent" TextColor="#173B70" FontAttributes="Bold" Clicked="OnBackButtonClicked" />
+            <Label Grid.Column="1" Text="Settings" FontSize="20" FontAttributes="Bold" TextColor="#173B70" HorizontalOptions="Center" VerticalOptions="Center" Margin="-60,0,0,0" />
+        </Grid>
+
+        <!-- A placeholder for future profile stuff -->
+        <Border BackgroundColor="#FFFFFF" Stroke="#E4E7EC" StrokeThickness="1" StrokeShape="RoundRectangle 12" Padding="20">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Stark's Profile" FontSize="18" FontAttributes="Bold" TextColor="#172033" />
+                <Label Text="More profile settings coming soon..." TextColor="#667085" FontAttributes="Italic" />
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- The Logout Button -->
+        <Button x:Name="LogoutButton"
+                Text="Log Out" 
+                BackgroundColor="#D92D20" 
+                TextColor="#FFFFFF"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HeightRequest="48"
+                Clicked="OnLogoutButtonClicked"
+                Margin="0,20,0,0" />
+
+    </VerticalStackLayout>
+</ContentPage>

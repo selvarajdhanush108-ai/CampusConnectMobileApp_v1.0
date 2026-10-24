@@ -8,9 +8,14 @@
     Shell.NavBarIsVisible="False"
     >
 
-    <ShellContent
-        Title="CampusConnect"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellItem Route="MainPage">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </ShellItem>
+    <ShellItem Route="HomePage">
+        <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+    </ShellItem>
+    <ShellItem Route="SettingsPage">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </ShellItem>
 
 </Shell>

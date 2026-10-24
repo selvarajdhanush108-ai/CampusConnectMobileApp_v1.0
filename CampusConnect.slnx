@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CampusConnect.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

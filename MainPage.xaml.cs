@@ -16,5 +16,11 @@ public partial class MainPage : ContentPage
 			return;
 		}
 		await DisplayAlert("Success",$"Attempting to login as {email}","OK");
+		Preferences.Default.Set("IsLoggedIn", true);
+		await Shell.Current.GoToAsync("//HomePage");
+	}
+	private async void OnSignUpTapped(object sender,EventArgs e)
+	{
+		await Shell.Current.GoToAsync(nameof(SignUpPage));
 	}
 }

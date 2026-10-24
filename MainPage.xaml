@@ -62,7 +62,7 @@
                                 FontAttributes="Bold"
                                 TextColor="#172033" />
                             <Grid ColumnDefinitions="30,*,30">
-                                <Label Text="" Grid.Column="0" FontSize="16" TextColor="#667085" VerticalOptions="Center" HorizontalOptions="center" />
+                                <Label Text="" Grid.Column="0" FontSize="16" TextColor="#667085" VerticalOptions="Center" HorizontalOptions="Center" />
                                  <Entry
                                     x:Name="PassEntry"
                                     Grid.Column="1"
@@ -99,8 +99,12 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Don't have an account? " FontSize="14" TextColor="#667085"/>
-                                <Span Text="Sign Up" TextColor="#1769AA" FontSize="14" FontAttributes="Bold"/>
-                            </FormattedString>
+                            <Span Text="Sign Up" TextColor="#1769AA" FontSize="14" FontAttributes="Bold">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSignUpTapped" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
                         </Label.FormattedText>
                     </Label>
                 </VerticalStackLayout>
